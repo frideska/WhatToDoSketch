@@ -1,0 +1,23 @@
+.header {
+    background: #eeeeee;
+    border: 1px solid #d8d8d8;
+    box-shadow: 3px 1px 5px #d8d8d8;
+}
+
+.header-title {
+    text-align: center;
+    font-weight: 200; 
+    color:#7F7A7A; 
+    font-size: 65px;
+    margin: 0;
+    padding-top: 45px;
+}
+
+.header-icons {
+    text-align: center;
+
+    .header-img {
+        height: 230px; 
+        transform: scale(3, 3.2);
+    } 
+}
