@@ -15,8 +15,7 @@ jobs:
       run: npm install
         
     - name: Bump version
-      run: |
-        npm run release
+      run: npm run release
         
     - name: Push changes
       run: git push gh-origin HEAD:master --tags
