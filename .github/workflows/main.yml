@@ -18,6 +18,8 @@ jobs:
         
       - name: Bump version
         run: npm run release
+        env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Push changes
         run: git push gh-origin HEAD:master --tags
