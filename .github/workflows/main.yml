@@ -28,6 +28,6 @@ jobs:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Push changes
-        run: git push gh-origin HEAD:master --tags
+        run: git push origin master
         env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
