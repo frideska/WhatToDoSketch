@@ -11,19 +11,13 @@ jobs:
     
     steps:
       - name: Checkout
-        uses: actions/checkout@v1
-      - name: Checkout happened
-        run: echo "Checkout happened"
+        uses: actions/checkout@v2
         
       - name: Install
         run: npm install
-      - name: Install happened
-        run: echo "Install happened"
         
       - name: Bump version
         run: npm run release
-      - name: Bump happened
-        run: echo "Bump happened"
 
       - name: Push changes
         run: git push gh-origin HEAD:master --tags
