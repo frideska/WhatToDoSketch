@@ -29,10 +29,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      if: ${{ success() }}
       - name: If success
-        - steps:
-          - name: Push
-            run: git push origin HEAD
-            env:
-              GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        if: ${{ success() }}
+        run: git push origin HEAD
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
