@@ -30,7 +30,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: If success
-        if: ${{ failure() }} ; then
+        if: ${{ success() }}
         - steps:
           - name: Push
             run: git push origin HEAD
