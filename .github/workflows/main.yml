@@ -29,13 +29,10 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: If failure
+      - name: If success
         if: ${{ failure() }} ; then
-          run: |
-            echo "Version was already bumped!"
-            exit 1
-
-      - name: Push
-        run: git push origin HEAD
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        - steps:
+          - name: Push
+            run: git push origin HEAD
+            env:
+              GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
