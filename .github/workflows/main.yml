@@ -31,9 +31,9 @@ jobs:
 
       - name: If failure
         if: ${{ failure() }} ; then
-        run: |
-          echo "Version was already bumped!"
-          exit 1
+          run: |
+            echo "Version was already bumped!"
+            exit 1
 
       - name: Push
         run: git push origin HEAD
