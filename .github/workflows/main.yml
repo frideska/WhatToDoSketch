@@ -13,12 +13,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
+      - name: Chekcout branch
+        run: |  
+          git fetch
+          git checkout "$(echo ${{ github.ref }} | sed -E 's|refs/[a-zA-Z]+/||')"
+
       - name: Install
         run: npm install
-
-      - name: Install
-        run:  git checkout "$(echo ${{ github.ref }} | sed -E 's|refs/[a-zA-Z]+/||')"
-
+        
       - name: setup git config
         run: |
           # setup the username and email. I tend to use 'GitHub Actions Bot' with no email by default
