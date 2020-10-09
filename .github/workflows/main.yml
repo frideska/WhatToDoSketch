@@ -15,10 +15,9 @@ jobs:
         with:
           ref: ${{ github.head_ref }}
 
-
       - name: Install
         run: npm install
-        
+
       - name: setup git config
         run: |
           # setup the username and email. I tend to use 'GitHub Actions Bot' with no email by default
@@ -29,8 +28,11 @@ jobs:
         run: npm run release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          
-          
+
+      - name: The job has failed
+        if: ${{ failure() }}
+        run: echo "Version has already bumped!"
+
       - name: Push
         run: git push origin HEAD
         env:
