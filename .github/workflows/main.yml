@@ -1,6 +1,8 @@
+#GITHUB_TOKEN = private github token (hvilke premissions)
+
 name: Bump version
 on:
-  pull_request:
+  push:
     branches:
       - master
 
@@ -11,7 +13,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v1
+        uses: actions/checkout@v2
         with:
           ref: ${{ github.head_ref }}
 
@@ -29,13 +31,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: If failure
-        if: ${{ failure() }} ; then
-        run: |
-          echo "Version was already bumped!"
-          exit 1
-
       - name: Push
+        if: ${{ success() }}
         run: git push origin HEAD
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
