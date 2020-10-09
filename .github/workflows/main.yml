@@ -30,6 +30,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - if: ${{ failure() }} ; then
+        run: |
           echo "Version has already bumped!"
           exit 0
 
