@@ -11,10 +11,10 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
-        
-      - name: reattach HEAD to Head Ref
-        run: git checkout "${GITHUB_REF:11}"
+        uses: actions/checkout@v1
+        with:
+          ref: ${{ github.head_ref }}
+
 
       - name: Install
         run: npm install
