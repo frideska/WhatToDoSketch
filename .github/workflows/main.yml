@@ -11,11 +11,14 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v1
+        with:
+          ref: ${{ github.head_ref }}
+
 
       - name: Install
         run: npm install
-
+        
       - name: setup git config
         run: |
           # setup the username and email. I tend to use 'GitHub Actions Bot' with no email by default
@@ -26,8 +29,9 @@ jobs:
         run: npm run release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Push changes
-        run: git push --follow-tags origin master
+          
+          
+      - name: Push
+        run: git push origin HEAD
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
