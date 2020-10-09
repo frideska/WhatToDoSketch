@@ -1,0 +1,12 @@
+{
+  "packages": [
+    {
+      "url": "./package.json",
+      "version": {
+        "major": false,
+        "minor": true,
+        "patch": false
+      }
+    }
+  ]
+}
