@@ -1,6 +1,6 @@
 {
   "name": "what-to-do-sketch",
-  "version": "0.0.8",
+  "version": "1.0.8",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",

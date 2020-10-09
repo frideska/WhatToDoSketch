@@ -1,6 +1,6 @@
 name: Bump version
 on:
-  pull_request:
+  push:
     branches:
       - master
 
@@ -18,7 +18,7 @@ jobs:
       - name: Install
         run: npm install
 
-      - name: Setup git config
+      - name: setup git config
         run: |
           # setup the username and email. I tend to use 'GitHub Actions Bot' with no email by default
           git config user.name "GitHub Actions Bot"
@@ -29,8 +29,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: If success
-        # if: ${{ success() }}
+      - name: Push
         run: git push origin HEAD
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
