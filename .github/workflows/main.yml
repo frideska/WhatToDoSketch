@@ -27,12 +27,11 @@ jobs:
           git config user.email "<>"
 
       - name: Bump version
-        run: npm run release
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        runs:
+          using: "node12"
+          main: "index.js"
 
       - name: Push
-        if: ${{ success() }}
         run: git push origin HEAD
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
