@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.8](https://github.com/frideska/WhatToDoSketch/compare/v0.0.7...v0.0.8) (2020-10-09)
+
+
+### Features
+
+* asss ([54ba8e8](https://github.com/frideska/WhatToDoSketch/commit/54ba8e87540df4025c96f81aded74f46e870de2a))
+* **sdf:** sdf ([6cce421](https://github.com/frideska/WhatToDoSketch/commit/6cce421a307385ba47ac9e45fe2a47940903b49c))
+* **sdfsd:** sdf ([1914b8b](https://github.com/frideska/WhatToDoSketch/commit/1914b8bf4aa3ad81434838cee3ca9c4c7dc9891e))
+
+
+### Bug Fixes
+
+* sdfsf ([a72eab3](https://github.com/frideska/WhatToDoSketch/commit/a72eab30afa2d8faf4103292d07714df399ee02b))
+
+
+### Styling
+
+* sdsfsdf ([ccea953](https://github.com/frideska/WhatToDoSketch/commit/ccea9531eb20871a26055b4c8ca6011600bfd9ad))
+
 ### [0.0.7](https://github.com/frideska/WhatToDoSketch/compare/v0.0.3...v0.0.7) (2020-10-08)
 
 
