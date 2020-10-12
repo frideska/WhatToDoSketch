@@ -10,14 +10,23 @@ try {
   core.setOutput("time", time);
   // Get the JSON webhook payload for the event that triggered the workflow
   const payload = JSON.stringify(github.context.payload, undefined, 2);
-  console.log(`The event payload: ${payload}`);
 } catch (error) {
   core.setFailed(error.message);
 }
 
 // CREATING CLASSLIST.JSON
 async function checkForVersionChange() {
-  const projectVersions = JSON.parse(fs.readFileSync("./bumpfile.json"));
+  if (
+    fs.readFileSync("./../actions/hello-world-javascript-action/bumpfile.json")
+  ) {
+    console.log("file found");
+  } else {
+    console.log("file not found");
+  }
+
+  const projectVersions = JSON.parse(
+    fs.readFileSync("./../actions/hello-world-javascript-action/bumpfile.json")
+  );
   console.log(elvisCSS);
 
   projectVersions.forEach((package) => {
