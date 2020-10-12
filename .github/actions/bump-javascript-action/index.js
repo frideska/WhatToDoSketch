@@ -5,12 +5,12 @@ const fs = require("fs");
 try {
   // `who-to-greet` input defined in action metadata file
   checkForVersionChange();
-  const nameToGreet = core.getInput("who-to-greet");
-  console.log(`Hello ${nameToGreet}!`);
-  const time = new Date().toTimeString();
-  core.setOutput("time", time);
+  // const nameToGreet = core.getInput("who-to-greet");
+  // console.log(`Hello ${nameToGreet}!`);
+  // const time = new Date().toTimeString();
+  // core.setOutput("time", time);
   // Get the JSON webhook payload for the event that triggered the workflow
-  const payload = JSON.stringify(github.context.payload, undefined, 2);
+  // const payload = JSON.stringify(github.context.payload, undefined, 2);
 } catch (error) {
   core.setFailed(error.message);
 }
@@ -31,10 +31,5 @@ async function checkForVersionChange() {
 
   const classlist = getAllClasses(elvisCSS);
 
-  fs.writeFileSync(
-    ".internal/classlist.json",
-    JSON.stringify(classlist, null, "\t"),
-    "utf8"
-  );
   return true;
 }
