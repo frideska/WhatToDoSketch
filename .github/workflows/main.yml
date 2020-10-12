@@ -27,10 +27,9 @@ jobs:
           git config user.email "<>"
 
       - name: Bump version
-        uses: actions/bump-js-action@v1.1
+        uses: ./
         with:
           who-to-greet: "Mona the Octocat"
-
       - name: Get the output time
         run: echo "The time was ${{ steps.hello.outputs.time }}"
 
