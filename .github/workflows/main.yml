@@ -2,7 +2,7 @@
 
 name: Bump version
 on:
-  push:
+  pull_request:
     branches:
       - master
 
@@ -27,12 +27,13 @@ jobs:
           git config user.email "<>"
 
       - name: Bump version
-        run: npm run release
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        uses: ./.github/actions/hello-world-javascript-action
+        with:
+          who-to-greet: "Mona the Octocat"
+      - name: Get the output time
+        run: echo "The time was ${{ steps.hello.outputs.time }}"
 
       - name: Push
-        if: ${{ success() }}
         run: git push origin HEAD
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
