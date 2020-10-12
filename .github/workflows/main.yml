@@ -27,7 +27,7 @@ jobs:
           git config user.email "<>"
 
       - name: Bump version
-        uses: ./.github/actions
+        uses: ./.github/actions/hello-world-javascript-action
         with:
           who-to-greet: "Mona the Octocat"
       - name: Get the output time
