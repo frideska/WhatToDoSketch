@@ -27,7 +27,12 @@ jobs:
           git config user.email "<>"
 
       - name: Bump version
-        uses: ./.github/actions/action
+        uses: actions/bump-js-action@v1.1
+        with:
+          who-to-greet: "Mona the Octocat"
+
+      - name: Get the output time
+        run: echo "The time was ${{ steps.hello.outputs.time }}"
 
       - name: Push
         run: git push origin HEAD
