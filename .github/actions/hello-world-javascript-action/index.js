@@ -17,9 +17,7 @@ try {
 
 // CREATING CLASSLIST.JSON
 async function checkForVersionChange() {
-  if (
-    fs.readFileSync("./../actions/hello-world-javascript-action/bumpfile.json")
-  ) {
+  if (fs.readFileSync("./bumpfile.json")) {
     console.log("file found");
   } else {
     console.log("file not found");
