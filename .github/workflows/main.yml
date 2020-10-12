@@ -27,9 +27,7 @@ jobs:
           git config user.email "<>"
 
       - name: Bump version
-        runs:
-          using: "node12"
-          main: "action.yml"
+        uses: "action.yml"
 
       - name: Push
         run: git push origin HEAD
