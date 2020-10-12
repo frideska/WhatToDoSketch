@@ -27,7 +27,7 @@ jobs:
           git config user.email "<>"
 
       - name: Bump version
-        uses: ./.github/workflows/action
+        uses: ./.github/actions/action
 
       - name: Push
         run: git push origin HEAD
