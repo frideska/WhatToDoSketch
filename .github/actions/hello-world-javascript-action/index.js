@@ -17,12 +17,6 @@ try {
 
 // CREATING CLASSLIST.JSON
 async function checkForVersionChange() {
-  if (fs.readFileSync("bumpfile.json")) {
-    console.log("file found");
-  } else {
-    console.log("file not found");
-  }
-
   const projectVersions = JSON.parse(fs.readFileSync("bumpfile.json"));
   console.log(elvisCSS);
 
